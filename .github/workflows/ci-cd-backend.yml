@@ -35,4 +35,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/intens-api:{{ github.sha }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/intens-api:${{ github.sha }}
