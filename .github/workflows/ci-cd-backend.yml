@@ -35,7 +35,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/intens-api:${{ github.sha }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/intens-api:${{ github.run_id }}
 
     - name: Setup SSH for deployment
       run: |
@@ -53,4 +53,4 @@ jobs:
         EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
         DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
         DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-        IMAGE_TAG: ${{ github.sha }}
+        IMAGE_TAG: ${{ github.run_id }}
